@@ -1,5 +1,8 @@
 pipeline {
     agent any
+	tools{
+	      maven 'local-maven'
+		 }
     environment {
         TOMCAT_USER = 'tomcat'
         TOMCAT_HOST = 'http://13.127.75.155:9050/'
