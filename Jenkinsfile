@@ -4,7 +4,7 @@ pipeline {
 	      maven 'local-maven'
 		 }
     environment {
-        TOMCAT_USER = 'tomcat'
+        TOMCAT_USER = 'admin'
         TOMCAT_HOST = 'http://13.127.75.155:9050/'
         TOMCAT_PORT = '9050'
         TOMCAT_WEBAPP_DIR = '/opt/tomcat/webapps/'
