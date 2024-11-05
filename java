@@ -3,7 +3,7 @@ pipeline{
          stages{
 		    stage('checkout'){
 		      steps{
-		        git "https://github.com/Madhav987/boxfuse-sample-java-war-hello.git"
+		        git "https://github.com/jyotikaradigudda1996/first_repo_githubclass.git"
 			}
 				
 		}
