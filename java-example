@@ -1,0 +1,29 @@
+pipeline { 
+ 	agent { label 'Agent-2' } 
+ 
+ 	stages { 
+        stage('Checkout') {             steps { 
+                 git branch: 'main', url: 'https://github.com/Veena-devops/java-example.git' 
+                  } 
+            } 
+ 
+  stage('Test') {    steps { 
+ 	 	 	 	echo 'Running unit test and integratio test' 
+ 	 	 	 	   } 
+ 	 	 	} 
+ 
+ 	 	stage('Build') { 
+ 	 	 	steps { 
+ 	 	 	 	sh 'mvn clean package' 
+ 	 	 	 	  } 
+ 	 	 	} 
+ 
+ 	 	stage('Deploy') { 
+ 	 	 	steps { 
+ 	 	 	    sh 'sudo rsync -av /home/ec2-user/jenkins/workspace/CI-CD-
+Tomcat/target/works-with-heroku-1.0.war /opt/apache-tomcat-9.0.95/webapps' 
+ 	 	 	    sh 'sudo stopTomcat'  	 	 	    sh 'sudo startTomcat'  	 	 	 	echo 'Successfully deployed'  	 	 	 	} 
+ 	 	 	} 
+ 	 	} 
+} 
+
